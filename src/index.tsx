@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import { QueryClient , QueryClientProvider } from 'react-query'
 
-
+const client = new QueryClient();
 ReactDOM.render(
-  <React.StrictMode>
+  <QueryClientProvider client={client}>
     <App />
-  </React.StrictMode>,
+    </QueryClientProvider>, 
   document.getElementById('root')
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
